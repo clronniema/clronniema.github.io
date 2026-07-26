@@ -1,0 +1,27 @@
+/* The resume-biography block ships with vertical section padding only, so its
+   long-form text (the biography paragraph) runs to the viewport edges on
+   narrow screens. Inset it to match the horizontal padding other blocks use. */
+.resume-biography {
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .resume-biography {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* The block renders the avatar at a fixed pixel size (320px for size: large)
+   via inline width/height, which overflows the viewport on the narrowest
+   phones. Cap it to the available width, keeping the frame square.
+   !important is required to override the template's inline styles. */
+.resume-biography .avatar-wrapper {
+  max-width: 100%;
+  height: auto !important;
+  aspect-ratio: 1;
+}
+
+.resume-biography .avatar {
+  width: 100% !important;
+  height: 100% !important;
+}
