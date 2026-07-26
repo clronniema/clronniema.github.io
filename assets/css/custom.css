@@ -25,3 +25,185 @@
   width: 100% !important;
   height: 100% !important;
 }
+
+/* The notebook shortcode wraps itself in `not-prose` (to stop the page's prose
+   wrapper from restyling notebook chrome), then puts `prose` back on each
+   markdown cell. That second step is a no-op: Tailwind Typography compiles
+   every rule as `:where(h1):not(:where([class~=not-prose], [class~=not-prose] *))`,
+   and cell content always sits under the `not-prose` container. So markdown
+   cells get no typography at all and fall back to Preflight, which resets
+   headings to `font-size: inherit; font-weight: inherit; margin: 0`.
+
+   Restore block typography explicitly. Scoped to notebook markdown regions so
+   nothing leaks back onto the notebook's own chrome. Heading sizes follow the
+   theme's intent (its dead `prose-h1:text-2xl prose-h2:text-xl` utilities):
+   headings are a step smaller than page headings because a notebook is a
+   nested component. Vertical rhythm is in `em` so it scales with each
+   heading's own size. */
+.hb-notebook-markdown :is(h1, h2, h3, h4, h5, h6),
+.hb-notebook-output--markdown :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-zinc-900, #18181b);
+  text-wrap: balance;
+}
+
+.dark .hb-notebook-markdown :is(h1, h2, h3, h4, h5, h6),
+.dark .hb-notebook-output--markdown :is(h1, h2, h3, h4, h5, h6) {
+  color: #fff;
+}
+
+.hb-notebook-markdown h1,
+.hb-notebook-output--markdown h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-block: 0 0.6em;
+}
+
+.hb-notebook-markdown h2,
+.hb-notebook-output--markdown h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin-block: 1.6em 0.6em;
+}
+
+.hb-notebook-markdown h3,
+.hb-notebook-output--markdown h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-block: 1.5em 0.5em;
+}
+
+.hb-notebook-markdown :is(h4, h5, h6),
+.hb-notebook-output--markdown :is(h4, h5, h6) {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-block: 1.4em 0.5em;
+}
+
+/* A cell often opens on a heading; the leading margin would double up on the
+   gap the cell already provides. */
+.hb-notebook-markdown > :first-child,
+.hb-notebook-output--markdown > :first-child {
+  margin-block-start: 0;
+}
+
+.hb-notebook-markdown > :last-child,
+.hb-notebook-output--markdown > :last-child {
+  margin-block-end: 0;
+}
+
+/* Preflight zeroes these too, so without them the whole cell renders as one
+   undifferentiated slab regardless of the heading fix. */
+.hb-notebook-markdown :is(p, ul, ol, blockquote, pre, table),
+.hb-notebook-output--markdown :is(p, ul, ol, blockquote, pre, table) {
+  margin-block: 1.25em;
+}
+
+.hb-notebook-markdown :is(ul, ol),
+.hb-notebook-output--markdown :is(ul, ol) {
+  padding-inline-start: 1.625em;
+}
+
+.hb-notebook-markdown ul,
+.hb-notebook-output--markdown ul {
+  list-style: disc;
+}
+
+.hb-notebook-markdown ol,
+.hb-notebook-output--markdown ol {
+  list-style: decimal;
+}
+
+.hb-notebook-markdown li,
+.hb-notebook-output--markdown li {
+  margin-block: 0.375em;
+}
+
+.hb-notebook-markdown :is(ul, ol) :is(ul, ol),
+.hb-notebook-output--markdown :is(ul, ol) :is(ul, ol) {
+  margin-block: 0.5em;
+}
+
+.hb-notebook-markdown blockquote,
+.hb-notebook-output--markdown blockquote {
+  padding-inline-start: 1em;
+  border-inline-start: 0.25rem solid var(--color-zinc-200, #e4e4e7);
+  font-style: italic;
+}
+
+.dark .hb-notebook-markdown blockquote,
+.dark .hb-notebook-output--markdown blockquote {
+  border-inline-start-color: var(--color-zinc-700, #3f3f46);
+}
+
+.hb-notebook-markdown hr,
+.hb-notebook-output--markdown hr {
+  margin-block: 2.5em;
+  border-top: 1px solid var(--color-zinc-200, #e4e4e7);
+}
+
+.dark .hb-notebook-markdown hr,
+.dark .hb-notebook-output--markdown hr {
+  border-top-color: var(--color-zinc-800, #27272a);
+}
+
+.hb-notebook-markdown :not(pre) > code,
+.hb-notebook-output--markdown :not(pre) > code {
+  font-size: 0.875em;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  padding: 0.125em 0.375em;
+  background-color: var(--color-zinc-100, #f4f4f5);
+}
+
+.dark .hb-notebook-markdown :not(pre) > code,
+.dark .hb-notebook-output--markdown :not(pre) > code {
+  background-color: var(--color-zinc-800, #27272a);
+}
+
+.hb-notebook-markdown a,
+.hb-notebook-output--markdown a {
+  color: var(--color-primary-600, #2563eb);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.dark .hb-notebook-markdown a,
+.dark .hb-notebook-output--markdown a {
+  color: var(--color-primary-300, #93c5fd);
+}
+
+.hb-notebook-markdown strong,
+.hb-notebook-output--markdown strong {
+  font-weight: 600;
+}
+
+.hb-notebook-markdown table,
+.hb-notebook-output--markdown table {
+  width: 100%;
+  font-size: 0.875em;
+  line-height: 1.7;
+  border-collapse: collapse;
+}
+
+.hb-notebook-markdown :is(th, td),
+.hb-notebook-output--markdown :is(th, td) {
+  padding: 0.5em 0.75em;
+  text-align: start;
+  border-bottom: 1px solid var(--color-zinc-200, #e4e4e7);
+}
+
+.dark .hb-notebook-markdown :is(th, td),
+.dark .hb-notebook-output--markdown :is(th, td) {
+  border-bottom-color: var(--color-zinc-800, #27272a);
+}
+
+.hb-notebook-markdown th,
+.hb-notebook-output--markdown th {
+  font-weight: 600;
+}
