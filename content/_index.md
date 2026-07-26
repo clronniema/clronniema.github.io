@@ -6,81 +6,132 @@ date: 2022-10-24
 type: landing
 
 sections:
-  - block: resume-biography-3
+
+  - block: resume-biography
+    id:
     content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: me
-      text: ''
-      # Show a call-to-action button under your biography? (optional)
+      text: GIS analyst with extensive working experience in GIS, proven proficiency in GIS data ETL and developing GIS applications. Familiar with Esri products such as ArcGIS Pro, ArcGIS Online and geoprocessing tools, as well as open source tools such as QGIS on a regular basis. Looking forward to my next challenge in Canada and is excited for upcoming challenges and problems to solve.
       button:
-        text: Download CV
         url: uploads/resume.pdf
-      headings:
-        about: ''
-        education: ''
-        interests: ''
+        text: "Resume" 
     design:
-      # Use the new Gradient Mesh which automatically adapts to the selected theme colors
-      background:
-        gradient_mesh:
-          enable: true
-
-      # Name heading sizing to accommodate long or short names
-      name:
-        size: md # Options: xs, sm, md, lg (default), xl
-
-      # Avatar customization
       avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
-        shape: circle # Options: circle (default), square, rounded
-  - block: markdown
-    content:
-      title: '📚 My Research'
-      subtitle: ''
-      text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        size: large
+        shape: circle
+      biography:
+        style: "max-width: 60ch; "
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+  - block: tech-stack
+    id: skills
+    content:
+      title: "Tech Stack"
+      categories:
+        - name: GIS
+          items:
+            - name: QGIS
+              icon: brands/qgis
+            - name: ArcGIS
+              icon: brands/esri
+            - name: FME
+              icon: hero/arrows-right-left
+            - name: 3D (ContextCapture and Pix4D)
+              icon: hero/cube
+            - name: MapLibreJS
+              icon: brands/maplibre
+            - name: LeafletJS
+              icon: brands/leaflet
+        - name: Languages
+          items:
+            - name: TypeScript
+              icon: devicon/typescript
+            - name: Python
+              icon: devicon/python
+            - name: Javascript
+              icon: devicon/javascript
+        - name: Frontend
+          items:
+            - name: React
+              icon: devicon/react
+            - name: Angular
+              icon: devicon/angular
+            - name: Vue
+              icon: devicon/vuejs
+        - name: Backend
+          items:
+            - name: Node.js
+              icon: devicon/nodejs
+            - name: PostgreSQL
+              icon: devicon/postgresql
+            - name: MongoDB
+              icon: devicon/mongodb
+        - name: DevOps
+          items:
+            - name: Docker
+              icon: devicon/docker
+            - name: AWS (EC2, S3 and more...)
+              icon: devicon/amazonwebservices
+    design:
+      style: grid
+      show_levels: true
 
-        Please reach out to collaborate 😃
-    design:
-      columns: '1'
-  - block: collection
-    id: papers
+  - block: resume-experience
+    id: work
     content:
-      title: Featured Publications
+      username: me
+      text: Highlights from my recent roles and education.
+    design:
+      date_format: Jan 2006
+      is_education_first: false
+  # - block: markdown
+  #   content:
+  #     title: '📚 My Research'
+  #     subtitle: ''
+  #     text: |-
+  #       Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+
+  #       I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+
+  #       Please reach out to collaborate 😃
+  #   design:
+  #     columns: '1'
+  - block: portfolio
+    id: projects
+    content:
+      title: Featured Projects
+      count: 6
       filters:
         folders:
-          - publications
-        featured_only: true
+          - projects
+      buttons:
+        - name: All
+          tag: "*"
+        - name: Work
+          tag: Work
+        - name: QGIS
+          tag: QGIS
+        - name: Casual
+          tag: Casual
+        - name: Esri
+          tag: Esri
+        - name: Remote Sensing
+          tag: Remote Sensing
+        - name: 3D
+          tag: 3D
+        - name: R
+          tag: R
+      default_button_index: 0
+      archive:
+        enable: true
+        text: View All Projects
     design:
-      view: article-grid
-      columns: 2
+      columns: 3
   - block: collection
+    id: blog
     content:
-      title: Recent Publications
-      text: ''
-      filters:
-        folders:
-          - publications
-        exclude_featured: false
-    design:
-      view: citation
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - events
-    design:
-      view: card
-  - block: collection
-    id: news
-    content:
-      title: Recent News
+      title: Technical Blog
       subtitle: ''
-      text: ''
+      text: 'Coming soon...'
       # Page type to display. E.g. post, talk, publication...
       page_type: blog
       # Choose how many pages you would like to display (0 = all pages)
@@ -104,24 +155,5 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
-  - block: cta-card
-    demo: true # Only display this section in the HugoBlox Kit demo site
-    content:
-      title: 👉 Build your own academic website like this
-      text: |-
-        This site is generated by HugoBlox Kit - the FREE, Hugo-based open source website builder trusted by 250,000+ academics like you.
 
-        <a class="github-button" href="https://github.com/HugoBlox/kit" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star HugoBlox/kit on GitHub">Star</a>
-
-        Easily build anything with blocks - no-code required!
-
-        From landing pages, second brains, and courses to academic resumés, conferences, and tech blogs.
-      button:
-        text: Get Started
-        url: https://hugoblox.com/templates/
-    design:
-      card:
-        # Card background color (CSS class)
-        css_class: 'bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-600 text-white shadow-2xl'
-        css_style: ''
 ---

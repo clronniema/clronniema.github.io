@@ -2,115 +2,154 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-  alternate: ''  # Example: 王伟
+  display: Ronnie Ma
+  given: Ronnie
+  family: Ma
+  alternate: 'Chi Lap'  # Example: 王伟
   pronunciation: ''  # Example: Wáng Wěi
   pronouns: he/him
-postnominals:
-  - PhD
-  - MIEEE
+
 status:
-  icon: "☕️"
-role: Senior AI Research Scientist
-bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
+  icon: ""
+role: GIS Analyst & GIS Developer
+bio: GIS analyst with extensive working experience in GIS, proven proficiency in GIS data ETL and developing GIS applications. Familiar with Esri products such as ArcGIS Pro, ArcGIS Online and geoprocessing tools, as well as open source tools such as QGIS on a regular basis. Looking forward to my next challenge in Canada and is excited for upcoming challenges and problems to solve.
+
+
 
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: Vintality Tech Inc.
+    url: https://vintality.com/
 
 links:
   - icon: at-symbol
-    url: mailto:alex.johnson@example.com
+    url: mailto:clronnie.ma@gmail.com
     label: E-mail Me
-  - icon: brands/x
-    url: https://x.com/example
   - icon: brands/github
-    url: https://github.com/example
+    url: https://github.com/clronniema
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
-  - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://www.linkedin.com/in/ronnie-ma/
+
 
 interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Finding Geospatial Insights
+  - Geo AI
+  - QGIS, ArcGIS, Coding
 
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
-    summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
-    button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
+  - degree: MSc in Geomatics
+    institution: The Hong Kong Polytechnic University
+    start: 2015
+    end: 2017
+    # summary: |
+    #   Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
+    # button:
+    #   text: Download dissertation
+    #   url: /resume.pdf
+    #   icon: hero/arrow-down-tray
+  - degree: BSc in Geography
+    institution: McGill University
+    start: 2011
+    end: 2014
+  # - degree: BS Computer Science
+  #   institution: MIT
+  #   start: 2009-09-01
+  #   end: 2013-05-31
 
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
+  - role: GIS Developer
+    org: Vintality Tech Inc.
+    start: 2026-04-01
     summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
+      Managing GIS data infrastructure, including setting up self-hosted Mergin Maps server, data synchronization on PostGIS, raster imagery and GeoServer.
+
+      Develop backend APIs and frontend GIS page for advanced visualizing of GIS data using Angular. Using AWS technologies to support the applications (EC2, S3, RDS and more).
     button:
-      text: View portfolio
-      url: /
-      icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
+      text: Vintality Tech Inc.
+      url: https://vintality.com/
+      icon: hero/arrow-top-right-on-square
+
+  - role: Senior Digital Solutions Specialist (GIS)
+    org: AECOM Asia Company Limited
+    start: 2022-11-01
+    end: 2023-10-01
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      Research, compile standards and provide technical expertise in the GIS data exchange processes for the Hong Kong's Common Spatial Data Infrastructure (CSDI). Collaborate and coordinate among multiple government stakeholders, drafting documents for government and the public describing the open geospatial data provided by government departments.
 
-skills:
-  - name: Technical Skills
-    items:
-      - label: Python
-        level: 5
-      - label: Machine Learning
-        level: 5
-      - label: Cloud Computing
-        level: 4
-  - name: Research & Communication
-    items:
-      - label: Academic Writing
-        level: 5
-      - label: Conference Presentations
-        level: 4
-      - label: Grant Proposals
-        level: 4
+      Leading market research for Hong Kong Lands Department's 3D GIS data production, including photo-realistic 3D models, CityGML and indoor mapping. Research involves specifications of international standards, best practices and data.
+    tags:
+      - ArcGIS Pro
+      - QGIS
+      - Python
+    button:
+      text: AECOM
+      url: https://aecom.com/en-hk/
+      icon: hero/arrow-top-right-on-square
 
-languages:
-  - name: English
-    level: 5
-    label: Native
-  - name: Spanish
-    level: 4
-    label: Fluent
+  - role: Senior GIS Engineer
+    org: RaSpect Intelligence Inspection Limited
+    start: 2020-12-01
+    end: 2022-11-01
+    summary: |
+      Develop on-vehicle data collection module for a signboard defect detection system, providing a single solution to facilitate field staff to collect images, GPS and LIDAR data. Including frontend (Vue.js), backend for hardware integration (Python) and GIS data processing services (Python, Docker).
 
-awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
-    icon: hero/trophy
+      Responsible for developing a Python raycasting function to deduce the real world location of signboards using photogrammetry principles, as well as creating API for automation with the help of Prefect.
+
+      Developing GIS query API using Python, gRPC, Docker, and PostGIS (hosted on AWS RDS). Data upload and download from AWS S3 through Python functions.
+
+      Create custom QGIS tool using PyQt to improve workflow for remote GIS data editing staff. QA/QC and training for remote staff.
+
+      Periodically generate 3D models based on drone images using Bentley's Context Capture.
+    button:
+      text: RaSpect
+      url: https://raspect.ai/
+      icon: hero/arrow-top-right-on-square
+
+  - role: System Analyst
+    org: Joint Wisdom Engineering
+    start: 2020-03-01
+    end: 2020-12-01
+    summary: |
+      Administrating GIS databases for public lampposts management using Esri products. Monitoring, maintaining and creating tools for users, in order to streamline daily operation. 
+      
+      Occasional data conversion tasks through FME, supporting data verification, data submission and DGN conversions. 
+      
+      Providing insights on lampposts and sensors usage using Power BI.
+
+  - role: Project Assistant
+    org: The Hong Kong Polytechnic University
+    start: 2019-06-01
+    end: 2019-11-01
+    summary: |
+      Acted as GIS administrator, overseeing ArcGIS Enterprise products. Responsible for improving workflow for GIS users, providing Python scripts to simplify tasks, assist QA/QC process and assist users in mass data update using FME.
+
+      Create and maintain web GIS applications for office and site staff to view latest light pole data and status for deployment. Key skills: React.js with TypeScript, data retrieved from ArcGIS Server.
+
+      Design scripts and workflow to streamline deployment plan maps generation for regular lighting utility maintenance and IoT projects.
+
+      Overseeing outsourced web and desktop applications, liaising for end users and reporting users' issues to programmers. Deployment of few applications through Docker.
+
+      Esri product technical support for GIS users of the company.
+
+  - role: Senior GIS Analyst
+    org: Esri China (Hong Kong)
+    start: 2018-08-01
+    end: 2019-05-01
+    summary: |
+      Preparing demonstrations, benchmarks, prototypes of Esri products. Including projects for 3D visualization, creating web maps using ArcGIS API for JavaScript and mobile applications. Projects include data collection apps, electricity network data management, 3D visualization tools, demonstration sessions to universities.
+
+      Advising sales team on technical studies, conducting Esri products research and providing end-user technical support.
+    tags:
+      - ArcGIS Pro
+      - ArcGIS Enterprise
+      - ArcGIS Online
+
+  - role: GIS Analyst
+    org: Au Posford Consultants Ltd
+    start: 2015-03-01
+    end: 2018-08-01
+    summary: |
+      Developing GIS Android applications, preparing and conducting User Acceptance Tests. Responsible for data preparation such as querying data using SQL, interfacing data using Oracle stored procedures and generating mobile map files (.tpk). Update REST API on data change.
+
+      GIS web and desktop applications development using ArcGIS API for JavaScript, and C# .NET framework.
+
+      Data conversion using FME. Design workflow for data collection and QA/QC.
